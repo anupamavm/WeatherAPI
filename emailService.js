@@ -1,27 +1,42 @@
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 // Create a transporter for sending emails
 const transporter = nodemailer.createTransport({
-	service: 'Gmail',
+	service: 'gmail',
+	host: 'smtp.gmail.com',
+	port: 587,
+	secure: 'false',
 	auth: {
 		user: 'thenunof@gmail.com',
-		pass: '',
+		pass: 'dmiyisgrltmaqif',
 	},
 });
 
 // Function to send weather email to a user
 const sendWeatherEmail = async (email, weatherData) => {
 	try {
+		// Extract weather information
+		const { name, main, weather, wind, sys } = weatherData;
+
 		// Compose the email message
 		const mailOptions = {
-			from: 'thenunof@gmail.com',
+			from: 'thenunof@gmail.com', // Your Gmail email address
 			to: email,
-			subject: 'Weather Update',
-			text: `Here is the weather update for your location:
-        Temperature: ${weatherData.temperature}
-        Humidity: ${weatherData.humidity}
-        // Add more weather data fields as needed
-      `,
+			subject: `Weather Update for ${name}`,
+			text: `Here is the weather update for ${name}:
+		  - Description: ${weather[0].description}
+		  - Temperature: ${main.temp}°C (Feels like ${main.feels_like}°C)
+		  - Humidity: ${main.humidity}%
+		  - Pressure: ${main.pressure} hPa
+		  - Wind: ${wind.speed} m/s, ${wind.deg}°
+		  - Sunrise: ${new Date(sys.sunrise * 1000).toLocaleTimeString()}
+		  - Sunset: ${new Date(sys.sunset * 1000).toLocaleTimeString()}
+  
+		  For more details, please visit: https://openweathermap.org/city/${
+				weatherData.id
+			}
+		`,
 		};
 
 		// Send the email

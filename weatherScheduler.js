@@ -4,7 +4,7 @@ const WeatherData = require('./Models/WeatherData');
 const User = require('./Models/User');
 
 // Schedule the task to run every hour
-const cronJob = cron.schedule('0 * * * *', async () => {
+const cronJob = cron.schedule('*/2 * * * *', async () => {
 	try {
 		// Fetch all registered users
 		const users = await User.find();
