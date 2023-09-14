@@ -28,7 +28,6 @@ mongoose
 		console.log('Connected to MongoDB');
 		cronJob.start();
 		// emailCronJob.start();
-		// startCornJob();
 	})
 	.catch((err) => console.error('Failed to connect to MongoDB', err));
 

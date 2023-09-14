@@ -37,9 +37,11 @@ router.post('/register', async (req, res) => {
 			password: hashedPassword,
 			location,
 			weatherData: newWeatherData._id, // Assign the ObjectId of the weather data
+			//Here weather data is saved as array of weatherdata object id s
 		});
 		await user.save();
 
+		//Sending the user details as response again
 		res.status(201).json(user);
 	} catch (error) {
 		console.error('Registration Error:', error);
