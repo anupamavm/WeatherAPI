@@ -13,6 +13,15 @@ router.get('/', (req, res) => {
 router.post('/register', async (req, res) => {
 	try {
 		const { email, password, location } = req.body;
+
+		// Check if a user with the same email already exists
+		const existingUser = await User.findOne({ email });
+
+		if (existingUser) {
+			return res.status(400).json({ error: 'Email is already in use' });
+		}
+
+		// If no existing user found, proceed with registration
 		const hashedPassword = await bcrypt.hash(password, 10);
 
 		// Fetch weather data
@@ -70,7 +79,5 @@ router.put('/location', async (req, res) => {
 		res.status(500).json({ error: 'Failed to update location' });
 	}
 });
-
-//Get Weather Data
 
 module.exports = router;
