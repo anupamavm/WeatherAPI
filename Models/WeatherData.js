@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// This schema made as it can save all the data recived from the openWeatherApi
 const weatherDataSchema = new mongoose.Schema(
 	{
 		coord: {

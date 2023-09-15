@@ -11,7 +11,7 @@ const emailCronJob = cron.schedule('0 */3 * * *', async () => {
 
 		// Iterate over each user
 		for (const user of users) {
-			// Find the latest weather data for the user by sorting based on createdAt in descending order
+			// Find the latest weather data
 			const latestWeatherData = await WeatherData.findOne({
 				_id: user.weatherData,
 			})

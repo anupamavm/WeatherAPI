@@ -8,20 +8,20 @@ const transporter = nodemailer.createTransport({
 	port: 587,
 	secure: 'false',
 	auth: {
-		user: 'thenunof@gmail.com',
-		pass: 'dmiyisgrltmaqif',
+		user: process.env.SENDER_EMAIL,
+		pass: process.env.SENDER_EMAIL_APPPW,
 	},
 });
 
 // Function to send weather email to a user
 const sendWeatherEmail = async (email, weatherData) => {
 	try {
-		// Extract weather information
+		// Extract weather information passed to the send mail function
 		const { name, main, weather, wind, sys } = weatherData;
 
 		// Compose the email message
 		const mailOptions = {
-			from: 'thenunof@gmail.com', // Your Gmail email address
+			from: process.env.SENDER_EMAIL,
 			to: email,
 			subject: `Weather Update for ${name}`,
 			text: `Here is the weather update for ${name}:
