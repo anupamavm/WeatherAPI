@@ -3,7 +3,7 @@ const User = require('./Models/User');
 const { sendWeatherEmail } = require('./emailService');
 const WeatherData = require('./Models/WeatherData');
 
-// Schedule the email-sending task to run every 3 hours  - '0 */3 * * *'
+// Schedule the email-sending task to run every 3 hours
 const emailCronJob = cron.schedule('0 */3 * * *', async () => {
 	try {
 		// Fetch all registered users
