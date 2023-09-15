@@ -11,7 +11,7 @@ The Weather API is a Node.js application that allows users to register and recei
 - Deployed on Vercel.com
 
 ## Visit the Weather API
-[Here](https://weather-api-flax-two.vercel.app/) 
+[Here](https://weather-api-flax-two.vercel.app/){:target="_blank"} 
 
 
 
