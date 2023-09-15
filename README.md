@@ -12,7 +12,7 @@ The Weather API is a Node.js application that allows users to register and recei
 
 ## Visit the Weather API
 [Here](https://weather-api-flax-two.vercel.app/) 
-https://weather-api-flax-two.vercel.app/
+
 
 
 ## Test this application using the below Postman API Collection
