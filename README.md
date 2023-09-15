@@ -18,4 +18,4 @@ The Weather API is a Node.js application that allows users to register and recei
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/26602017-3f44dbd5-410e-483a-bb2d-c1396aadcdf6?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D26602017-3f44dbd5-410e-483a-bb2d-c1396aadcdf6%26entityType%3Dcollection%26workspaceId%3Da6bf912e-170f-48f6-a82e-fecc94998211)
 
-ps - the requests are written to work with the deployment in vercel.com
+the requests are written to work with the deployment in vercel.com
