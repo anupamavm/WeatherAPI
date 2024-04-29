@@ -1,6 +1,6 @@
 # Weather API
 
-The Weather API is a Node.js application that allows users to register and receive weather updates for their locations. It also sends weather emails to registered users every 3 hours with the latest weather data.
+The Weather API is a Node.js application that allows users to register and receive weather updates for their locations. It also sends weather emails to registered users every 3 hours with the latest weather data. This does not include a front end. Only a backend API can be used to build a frontend application.
 
 ## Features
 
